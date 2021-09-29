@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+
+entity seven-segment is
+begin
+	port(W, X, Y, Z: in bit; a, b, c, d, e, f,g out bit);
+end seven-segment;
+
+architecture archi of seven-segment is
+begin
+	
