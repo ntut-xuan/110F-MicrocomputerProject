@@ -1,10 +1,10 @@
 vendor_name = ModelSim
-source_file = 1, D:/Xuan/Documents/MC_Lab/lab1-2/lab1-2.vhd
-source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
-source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
-source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/timing_b.vhd
-source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/timing_p.vhd
-source_file = 1, D:/Xuan/Documents/MC_Lab/lab1-2/db/lab1-2.cbx.xml
+source_file = 1, D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/lab1-2.vhd
+source_file = 1, d:/programfiles/quartus18.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, d:/programfiles/quartus18.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, d:/programfiles/quartus18.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, d:/programfiles/quartus18.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/db/lab1-2.cbx.xml
 design_name = hard_block
 design_name = seven_segment
 instance = comp, \a[0]~output\, a[0]~output, seven_segment, 1

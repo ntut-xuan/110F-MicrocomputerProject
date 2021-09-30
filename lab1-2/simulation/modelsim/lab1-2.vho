@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "10/01/2021 00:07:05"
+-- DATE "10/01/2021 00:25:56"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -76,17 +76,17 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	seven_segment IS
     PORT (
-	W : IN std_logic_vector(1 DOWNTO 0);
-	X : IN std_logic_vector(1 DOWNTO 0);
-	Y : IN std_logic_vector(1 DOWNTO 0);
-	Z : IN std_logic_vector(1 DOWNTO 0);
-	a : BUFFER std_logic_vector(1 DOWNTO 0);
-	b : BUFFER std_logic_vector(1 DOWNTO 0);
-	c : BUFFER std_logic_vector(1 DOWNTO 0);
-	d : BUFFER std_logic_vector(1 DOWNTO 0);
-	e : BUFFER std_logic_vector(1 DOWNTO 0);
-	f : BUFFER std_logic_vector(1 DOWNTO 0);
-	g : BUFFER std_logic_vector(1 DOWNTO 0)
+	W : IN STD.STANDARD.bit_vector(1 DOWNTO 0);
+	X : IN STD.STANDARD.bit_vector(1 DOWNTO 0);
+	Y : IN STD.STANDARD.bit_vector(1 DOWNTO 0);
+	Z : IN STD.STANDARD.bit_vector(1 DOWNTO 0);
+	a : OUT STD.STANDARD.bit_vector(1 DOWNTO 0);
+	b : OUT STD.STANDARD.bit_vector(1 DOWNTO 0);
+	c : OUT STD.STANDARD.bit_vector(1 DOWNTO 0);
+	d : OUT STD.STANDARD.bit_vector(1 DOWNTO 0);
+	e : OUT STD.STANDARD.bit_vector(1 DOWNTO 0);
+	f : OUT STD.STANDARD.bit_vector(1 DOWNTO 0);
+	g : OUT STD.STANDARD.bit_vector(1 DOWNTO 0)
 	);
 END seven_segment;
 
@@ -184,17 +184,17 @@ END COMPONENT;
 
 BEGIN
 
-ww_W <= W;
-ww_X <= X;
-ww_Y <= Y;
-ww_Z <= Z;
-a <= ww_a;
-b <= ww_b;
-c <= ww_c;
-d <= ww_d;
-e <= ww_e;
-f <= ww_f;
-g <= ww_g;
+ww_W <= IEEE.STD_LOGIC_1164.TO_STDLOGICVECTOR(W);
+ww_X <= IEEE.STD_LOGIC_1164.TO_STDLOGICVECTOR(X);
+ww_Y <= IEEE.STD_LOGIC_1164.TO_STDLOGICVECTOR(Y);
+ww_Z <= IEEE.STD_LOGIC_1164.TO_STDLOGICVECTOR(Z);
+a <= IEEE.STD_LOGIC_1164.TO_BITVECTOR(ww_a);
+b <= IEEE.STD_LOGIC_1164.TO_BITVECTOR(ww_b);
+c <= IEEE.STD_LOGIC_1164.TO_BITVECTOR(ww_c);
+d <= IEEE.STD_LOGIC_1164.TO_BITVECTOR(ww_d);
+e <= IEEE.STD_LOGIC_1164.TO_BITVECTOR(ww_e);
+f <= IEEE.STD_LOGIC_1164.TO_BITVECTOR(ww_f);
+g <= IEEE.STD_LOGIC_1164.TO_BITVECTOR(ww_g);
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;

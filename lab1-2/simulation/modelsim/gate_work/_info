@@ -7,9 +7,9 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dD:/Xuan/Documents/MC_Lab/lab1-2/simulation/modelsim
+Z0 dD:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/simulation/modelsim
 Ehard_block
-Z1 w1633018025
+Z1 w1633019156
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -25,9 +25,9 @@ VF25TiLjh`DQcC8Z=zbJ?Y3
 !s100 A`ID_i56<Ua56=ZD=[EG=2
 Z10 OV;C;10.5b;63
 31
-Z11 !s110 1633018042
+Z11 !s110 1633019169
 !i10b 1
-Z12 !s108 1633018042.000000
+Z12 !s108 1633019169.000000
 Z13 !s90 -reportprogress|300|-93|-work|work|lab1-2.vho|
 Z14 !s107 lab1-2.vho|
 !i113 1
@@ -56,23 +56,23 @@ R14
 R15
 R16
 Eseven_segment
-Z17 w1633017317
+Z17 w1633018759
 R5
 R6
 R0
-Z18 8D:/Xuan/Documents/MC_Lab/lab1-2/lab1-2.vhd
-Z19 FD:/Xuan/Documents/MC_Lab/lab1-2/lab1-2.vhd
+Z18 8D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/lab1-2.vhd
+Z19 FD:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/lab1-2.vhd
 l0
 L5
 VL@Vb0OgofDEO[Z0kf53ZE2
 !s100 VMVNQhPi^K:LU>?AU92Wo1
 R10
 31
-Z20 !s110 1633018043
+R11
 !i10b 1
 R12
-Z21 !s90 -reportprogress|300|-93|-work|work|D:/Xuan/Documents/MC_Lab/lab1-2/lab1-2.vhd|
-Z22 !s107 D:/Xuan/Documents/MC_Lab/lab1-2/lab1-2.vhd|
+Z20 !s90 -reportprogress|300|-93|-work|work|D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/lab1-2.vhd|
+Z21 !s107 D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/lab1-2.vhd|
 !i113 1
 R15
 R16
@@ -86,11 +86,11 @@ V@g5GXaf7LUOS<A]G:6h@Y0
 !s100 Gbj02@:Wi>JFc5`3VJ[ld2
 R10
 31
-R20
+R11
 !i10b 1
 R12
+R20
 R21
-R22
 !i113 1
 R15
 R16
@@ -101,11 +101,11 @@ R4
 R5
 R6
 R7
-DEx4 work 13 seven_segment 0 22 az:iCNI>b<CJ86Ve4RdJQ3
+DEx4 work 13 seven_segment 0 22 bKSzB`nEQNg5lR>hQe;IO2
 l185
 L118
-Vd9FcPL`LoPch=<iBXiTNR3
-!s100 J5fGNSSLYgHOn6>O60zDj0
+V2SW7LPEd74Be]Q:F5H?6`2
+!s100 HBPQ5BP<?3ldE0?g2bdhR0
 R10
 31
 R11

@@ -1,5 +1,5 @@
 Fitter report for lab1-2
-Fri Oct 01 00:05:48 2021
+Fri Oct 01 00:25:45 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -62,7 +62,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Oct 01 00:05:48 2021       ;
+; Fitter Status                      ; Successful - Fri Oct 01 00:25:45 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; lab1-2                                      ;
 ; Top-level Entity Name              ; seven_segment                               ;
@@ -147,14 +147,14 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-8         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -196,7 +196,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/Xuan/Documents/MC_Lab/lab1-2/output_files/lab1-2.pin.
+The pin-out file can be found in D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/output_files/lab1-2.pin.
 
 
 +----------------------------------------------------------------------+
@@ -1538,7 +1538,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (119006): Selected device EP4CE115F29C7 for design "lab1-2"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1591,17 +1591,17 @@ Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
-Info (144001): Generated suppressed messages file D:/Xuan/Documents/MC_Lab/lab1-2/output_files/lab1-2.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5716 megabytes
-    Info: Processing ended: Fri Oct 01 00:05:48 2021
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:15
+Info (144001): Generated suppressed messages file D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/output_files/lab1-2.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 6014 megabytes
+    Info: Processing ended: Fri Oct 01 00:25:45 2021
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/Xuan/Documents/MC_Lab/lab1-2/output_files/lab1-2.fit.smsg.
+The suppressed messages can be found in D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab1-2/output_files/lab1-2.fit.smsg.
 
 
