@@ -1,0 +1,23 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.fulladd_package.all;
+
+entity fulladder is
+	port(a, b: in std_logic_vector(0 to 7); cin, cout: out std_logic; s: out std_logic(0 to 7));
+end fulladder;
+
+architecture adder of fulladder is:
+component fa
+	port (cin0, a0, b0: in std_logic; cout0, s0: out std_logic);
+end component
+signal c: std_logic_vector(0 to 6);
+begin
+	adder1: fa port map(cin, a(0), b(0), c(0), s(0));
+	adder2: fa port map(c(0), a(1), b(1), c(1), s(1));
+	adder3: fa port map(c(1), a(2), b(2), c(2), s(2));
+	adder4: fa port map(c(2), a(3), b(3), c(3), s(3));
+	adder5: fa port map(c(3), a(4), b(4), c(4), s(4));
+	adder6: fa port map(c(4), a(5), b(5), c(5), s(5));
+	adder7: fa port map(c(5), a(6), b(6), c(6), s(6));
+	adder8: fa port map(c(6), a(7), b(7), cout, s(7));
+end adder
