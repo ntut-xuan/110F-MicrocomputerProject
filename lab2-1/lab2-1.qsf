@@ -70,22 +70,6 @@ set_location_assignment PIN_L26 -to l2[3]
 set_location_assignment PIN_L25 -to l2[4]
 set_location_assignment PIN_J22 -to l2[5]
 set_location_assignment PIN_H22 -to l2[6]
-set_location_assignment PIN_AB28 -to a[0]
-set_location_assignment PIN_AC28 -to a[1]
-set_location_assignment PIN_AC27 -to a[2]
-set_location_assignment PIN_AD27 -to a[3]
-set_location_assignment PIN_AB27 -to a[4]
-set_location_assignment PIN_AC26 -to a[5]
-set_location_assignment PIN_AD26 -to a[6]
-set_location_assignment PIN_AB26 -to a[7]
-set_location_assignment PIN_AC25 -to b[0]
-set_location_assignment PIN_AB25 -to b[1]
-set_location_assignment PIN_AC24 -to b[2]
-set_location_assignment PIN_AB24 -to b[3]
-set_location_assignment PIN_AB23 -to b[4]
-set_location_assignment PIN_AA24 -to b[5]
-set_location_assignment PIN_AA23 -to b[6]
-set_location_assignment PIN_AA22 -to b[7]
 set_location_assignment PIN_V2 -to cin
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
@@ -97,4 +81,20 @@ set_global_assignment -name EDA_TEST_BENCH_NAME test -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id test
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME test -section_id test
 set_global_assignment -name EDA_TEST_BENCH_FILE main.vhd -section_id test
+set_location_assignment PIN_AB26 -to input_a[7]
+set_location_assignment PIN_AB28 -to input_a[0]
+set_location_assignment PIN_AC28 -to input_a[1]
+set_location_assignment PIN_AC27 -to input_a[2]
+set_location_assignment PIN_AD27 -to input_a[3]
+set_location_assignment PIN_AB27 -to input_a[4]
+set_location_assignment PIN_AC26 -to input_a[5]
+set_location_assignment PIN_AD26 -to input_a[6]
+set_location_assignment PIN_AC25 -to input_b[0]
+set_location_assignment PIN_AB25 -to input_b[1]
+set_location_assignment PIN_AC24 -to input_b[2]
+set_location_assignment PIN_AB24 -to input_b[3]
+set_location_assignment PIN_AB23 -to input_b[4]
+set_location_assignment PIN_AA24 -to input_b[5]
+set_location_assignment PIN_AA23 -to input_b[6]
+set_location_assignment PIN_AA22 -to input_b[7]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

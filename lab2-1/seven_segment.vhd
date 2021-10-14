@@ -7,41 +7,45 @@ end sevenSegment;
 
 architecture func of sevenSegment is
 begin
-	a <= (w and not(x) and not(y) and not(z)) or 
-	(not(w) and not(x) and y and not(z)) or 
+	a <= (not(w) and not(x) and not(y) and z) or
+	(not(w) and x and not(y) and not(z)) or
 	(w and not(x) and y and z) or
-	(w and x and not(y) and z) or
-	(w and x and not(y) and not(z));
+	(w and x and not(y) and z);
 	
-	
-	b <= (w and not(x) and y and not(z)) or 
+	b <= (not(w) and x and not(y) and z) or
 	(not(w) and x and y and not(z)) or
-	(w and x and y and not(z)) or
 	(w and not(x) and y and z) or
-	(w and x and y and z) or
-	(w and x and not(y) and not(z));
-	 
-	c <= (not(w) and x and not(y) and not(z)) or (w and x and not(y) and not(z)) or (w and x and y and not(z)) or (w and x and y and z);
-	
-	d <= (w and not(x) and not(y) and not(z)) or 
-	(w and x and y and not(z)) or 
-	(w and not(x) and not(y) and z) or 
-	(not(w) and not(x) and y and not(z)) or
-	(w and x and y and z) or
-	(w and not(x) and y and not(z));
-	
-	e <= (w and not(x) and not(y) and not(z)) or 
-	(w and x and not(y) and not(z)) or 
-	(not(w) and not(x) and y and not(z)) or 
+	(w and x and not(y) and not(z)) or
 	(w and x and y and not(z)) or
-	(w and not(x) and not(y) and z) or
-	(w and not(x) and y and not(z));
+	(w and x and y and z);
+	 
+	c <= (not(w) and not(x) and y and not(z)) or
+	(w and x and not(y) and not(z)) or
+	(w and x and y and not(z)) or
+	(w and x and y and z);
 	
-	f <= (w and not(x) and not(y) and not(z)) or 
-	(not(w) and x and not(y) and not(z)) or 
-	(w and x and y and not(z)) or 
-	(w and x and not(y) and z) or
+	d <= (not(w) and not(x) and not(y) and z) or
+	(not(w) and x and not(y) and not(z)) or
+	(not(w) and x and y and z) or
+	(w and not(x) and y and not(z)) or
+	(w and x and y and z);
+	
+	e <= (not(w) and not(x) and not(y) and z) or
+	(not(w) and not(x) and y and z) or
+	(not(w) and x and not(y) and not(z)) or
+	(not(w) and x and not(y) and z) or
+	(not(w) and x and y and z) or
+	(w and not(x) and not(y) and z);
+	
+	f <= (not(w) and not(x) and not(y) and z) or
+	(not(w) and not(x) and y and not(z)) or
+	(not(w) and not(x) and y and z) or
+	(not(w) and x and y and z) or
+	(w and x and not(y) and z);
+	
+	g <= (not(w) and not(x) and not(y) and not(z)) or
+	(not(w) and not(x) and not(y) and z) or
+	(not(w) and x and y and z) or
 	(w and x and not(y) and not(z));
-	
-	g <= (not(w) and not(x) and not(y) and not(z)) or (w and not(x) and not(y) and not(z)) or (w and x and y and not(z));
 end func;
+
