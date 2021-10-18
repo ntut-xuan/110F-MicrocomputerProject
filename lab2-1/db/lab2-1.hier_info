@@ -16,21 +16,20 @@ input_b[5] => fulladd:adder6.y
 input_b[6] => fulladd:adder7.y
 input_b[7] => fulladd:adder8.y
 cout << fulladd:adder8.cout
-l1[6] <= sevenSegment:seven_segment1.g
-l1[5] <= sevenSegment:seven_segment1.f
-l1[4] <= sevenSegment:seven_segment1.e
-l1[3] <= sevenSegment:seven_segment1.d
-l1[2] <= sevenSegment:seven_segment1.c
-l1[1] <= sevenSegment:seven_segment1.b
-l1[0] <= sevenSegment:seven_segment1.a
-l2[6] <= sevenSegment:seven_segment2.g
-l2[5] <= sevenSegment:seven_segment2.f
-l2[4] <= sevenSegment:seven_segment2.e
-l2[3] <= sevenSegment:seven_segment2.d
-l2[2] <= sevenSegment:seven_segment2.c
-l2[1] <= sevenSegment:seven_segment2.b
-l2[0] <= sevenSegment:seven_segment2.a
-led <= led.DB_MAX_OUTPUT_PORT_TYPE
+l1[6] << sevenSegment:seven_segment1.g
+l1[5] << sevenSegment:seven_segment1.f
+l1[4] << sevenSegment:seven_segment1.e
+l1[3] << sevenSegment:seven_segment1.d
+l1[2] << sevenSegment:seven_segment1.c
+l1[1] << sevenSegment:seven_segment1.b
+l1[0] << sevenSegment:seven_segment1.a
+l2[6] << sevenSegment:seven_segment2.g
+l2[5] << sevenSegment:seven_segment2.f
+l2[4] << sevenSegment:seven_segment2.e
+l2[3] << sevenSegment:seven_segment2.d
+l2[2] << sevenSegment:seven_segment2.c
+l2[1] << sevenSegment:seven_segment2.b
+l2[0] << sevenSegment:seven_segment2.a
 
 
 |fulladder|fulladd:adder1

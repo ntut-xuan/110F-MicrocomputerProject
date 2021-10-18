@@ -80,7 +80,6 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH test -section_i
 set_global_assignment -name EDA_TEST_BENCH_NAME test -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id test
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME test -section_id test
-set_global_assignment -name EDA_TEST_BENCH_FILE main.vhd -section_id test
 set_location_assignment PIN_AB26 -to input_a[7]
 set_location_assignment PIN_AB28 -to input_a[0]
 set_location_assignment PIN_AC28 -to input_a[1]
@@ -97,4 +96,6 @@ set_location_assignment PIN_AB23 -to input_b[4]
 set_location_assignment PIN_AA24 -to input_b[5]
 set_location_assignment PIN_AA23 -to input_b[6]
 set_location_assignment PIN_AA22 -to input_b[7]
+set_global_assignment -name EDA_TEST_BENCH_FILE fulladd.vhd -section_id test
+set_location_assignment PIN_G19 -to cout
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
