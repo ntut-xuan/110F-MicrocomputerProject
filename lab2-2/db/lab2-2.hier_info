@@ -1,0 +1,229 @@
+|BCDadder
+input_a[0] => fulladd:adder1.fa_x
+input_a[1] => fulladd:adder2.fa_x
+input_a[2] => fulladd:adder3.fa_x
+input_a[3] => fulladd:adder4.fa_x
+input_b[0] => fulladd:adder1.fa_y
+input_b[1] => fulladd:adder2.fa_y
+input_b[2] => fulladd:adder3.fa_y
+input_b[3] => fulladd:adder4.fa_y
+l1[6] <= sevenSegment:seven_segment1.ss_g
+l1[5] <= sevenSegment:seven_segment1.ss_f
+l1[4] <= sevenSegment:seven_segment1.ss_e
+l1[3] <= sevenSegment:seven_segment1.ss_d
+l1[2] <= sevenSegment:seven_segment1.ss_c
+l1[1] <= sevenSegment:seven_segment1.ss_b
+l1[0] <= sevenSegment:seven_segment1.ss_a
+l2[6] <= sevenSegment:seven_segment2.ss_g
+l2[5] <= sevenSegment:seven_segment2.ss_f
+l2[4] <= sevenSegment:seven_segment2.ss_e
+l2[3] <= sevenSegment:seven_segment2.ss_d
+l2[2] <= sevenSegment:seven_segment2.ss_c
+l2[1] <= sevenSegment:seven_segment2.ss_b
+l2[0] <= sevenSegment:seven_segment2.ss_a
+
+
+|BCDadder|fulladd:adder1
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|fulladd:adder2
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|fulladd:adder3
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|fulladd:adder4
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|fixed_circuit:fixed_circuit1
+fixed_a => fixed_out.IN0
+fixed_a => fixed_out.IN0
+fixed_b => fixed_out.IN1
+fixed_c => fixed_out.IN1
+fixed_d => ~NO_FANOUT~
+fixed_carry => fixed_out.IN1
+fixed_out <= fixed_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|fulladd:adder5
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|fulladd:adder6
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|fulladd:adder7
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|fulladd:adder8
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|sevenSegment:seven_segment1
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_b.IN1
+ss_y => ss_b.IN1
+ss_y => ss_c.IN1
+ss_y => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_e.IN1
+ss_z => ss_a.IN1
+ss_z => ss_a.IN1
+ss_z => ss_a.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_d.IN1
+ss_z => ss_e.IN1
+ss_z => ss_e.IN1
+ss_z => ss_a.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_c.IN1
+ss_z => ss_d.IN1
+ss_z => ss_g.IN1
+ss_a <= ss_a.DB_MAX_OUTPUT_PORT_TYPE
+ss_b <= ss_b.DB_MAX_OUTPUT_PORT_TYPE
+ss_c <= ss_c.DB_MAX_OUTPUT_PORT_TYPE
+ss_d <= ss_d.DB_MAX_OUTPUT_PORT_TYPE
+ss_e <= ss_e.DB_MAX_OUTPUT_PORT_TYPE
+ss_f <= ss_f.DB_MAX_OUTPUT_PORT_TYPE
+ss_g <= ss_g.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDadder|sevenSegment:seven_segment2
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_b.IN1
+ss_y => ss_b.IN1
+ss_y => ss_c.IN1
+ss_y => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_e.IN1
+ss_z => ss_a.IN1
+ss_z => ss_a.IN1
+ss_z => ss_a.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_d.IN1
+ss_z => ss_e.IN1
+ss_z => ss_e.IN1
+ss_z => ss_a.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_c.IN1
+ss_z => ss_d.IN1
+ss_z => ss_g.IN1
+ss_a <= ss_a.DB_MAX_OUTPUT_PORT_TYPE
+ss_b <= ss_b.DB_MAX_OUTPUT_PORT_TYPE
+ss_c <= ss_c.DB_MAX_OUTPUT_PORT_TYPE
+ss_d <= ss_d.DB_MAX_OUTPUT_PORT_TYPE
+ss_e <= ss_e.DB_MAX_OUTPUT_PORT_TYPE
+ss_f <= ss_f.DB_MAX_OUTPUT_PORT_TYPE
+ss_g <= ss_g.DB_MAX_OUTPUT_PORT_TYPE
+
+

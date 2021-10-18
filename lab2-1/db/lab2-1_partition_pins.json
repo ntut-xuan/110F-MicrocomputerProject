@@ -64,6 +64,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "led",
+					"strict" : false
+				},
+				{
 					"name" : "input_a[7]",
 					"strict" : false
 				},

@@ -1,0 +1,108 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  cycloneive
+Quartus root          :  c:/intelfpga_lite/18.1/quartus/bin64/
+Quartus sim root      :  c:/intelfpga_lite/18.1/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  vhdl
+Version               :  93
+Simulation Mode       :  GUI
+Sim Output File       :  lab2-2.vho
+Sim SDF file          :  lab2-2__vhdl.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script c:/intelfpga_lite/18.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File lab2-2_run_msim_gate_vhdl.do already exists - backing up current file as lab2-2_run_msim_gate_vhdl.do.bak1
+Probing transcript
+ModelSim-Altera Info: # Reading C:/intelFPGA_lite/18.1/modelsim_ae/tcl/vsim/pref.tcl
+ModelSim-Altera Info: # do lab2-2_run_msim_gate_vhdl.do
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+ModelSim-Altera Info: # vmap work gate_work 
+ModelSim-Altera Info: # Copying C:/intelFPGA_lite/18.1/modelsim_ae/win32aloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {lab2-2.vho}
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+ModelSim-Altera Info: # Start time: 16:21:26 on Oct 18,2021
+ModelSim-Altera Info: # vcom -reportprogress 300 -93 -work work lab2-2.vho 
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Info: # -- Loading package VITAL_Timing
+ModelSim-Altera Info: # -- Loading package VITAL_Primitives
+ModelSim-Altera Info: # -- Loading package cycloneive_atom_pack
+ModelSim-Altera Info: # -- Loading package cycloneive_components
+ModelSim-Altera Info: # -- Compiling entity hard_block
+ModelSim-Altera Info: # -- Compiling architecture structure of hard_block
+ModelSim-Altera Info: # -- Compiling entity BCDadder
+ModelSim-Altera Info: # -- Compiling architecture structure of BCDadder
+ModelSim-Altera Info: # End time: 16:21:26 on Oct 18,2021, Elapsed time: 0:00:00
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {D:/Xuan/Documents/MC_Lab/lab2-2/../lab2-1/main.vhd}
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+ModelSim-Altera Info: # Start time: 16:21:26 on Oct 18,2021
+ModelSim-Altera Info: # vcom -reportprogress 300 -93 -work work D:/Xuan/Documents/MC_Lab/lab2-2/../lab2-1/main.vhd 
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Error: # ** Error: (vcom-11) Could not find work.fulladd_package.
+ModelSim-Altera Info: # ** Error (suppressible): D:/Xuan/Documents/MC_Lab/lab2-2/../lab2-1/main.vhd(3): (vcom-1195) Cannot find expanded name "work.fulladd_package".
+ModelSim-Altera Error: # ** Error: D:/Xuan/Documents/MC_Lab/lab2-2/../lab2-1/main.vhd(3): Unknown expanded name.
+ModelSim-Altera Error: # ** Error: (vcom-11) Could not find work.seven_segment_package.
+ModelSim-Altera Info: # ** Error (suppressible): D:/Xuan/Documents/MC_Lab/lab2-2/../lab2-1/main.vhd(4): (vcom-1195) Cannot find expanded name "work.seven_segment_package".
+ModelSim-Altera Error: # ** Error: D:/Xuan/Documents/MC_Lab/lab2-2/../lab2-1/main.vhd(4): Unknown expanded name.
+ModelSim-Altera Error: # ** Error: D:/Xuan/Documents/MC_Lab/lab2-2/../lab2-1/main.vhd(6): VHDL Compiler exiting
+ModelSim-Altera Info: # End time: 16:21:26 on Oct 18,2021, Elapsed time: 0:00:00
+ModelSim-Altera Info: # Errors: 7, Warnings: 0
+ModelSim-Altera Error: # ** Error: C:/intelFPGA_lite/18.1/modelsim_ae/win32aloem/vcom failed.
+ModelSim-Altera Info: # Error in macro ./lab2-2_run_msim_gate_vhdl.do line 10
+ModelSim-Altera Info: # C:/intelFPGA_lite/18.1/modelsim_ae/win32aloem/vcom failed.
+ModelSim-Altera Info: #     while executing
+ModelSim-Altera Info: # "vcom -93 -work work {D:/Xuan/Documents/MC_Lab/lab2-2/../lab2-1/main.vhd}"
+Error: Errors encountered while running modelsim do file
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  1
+Nativelink TCL script failed with errorInfo:  1
+    (procedure "launch_sim" line 1)
+    invoked from within
+"launch_sim launch_args_hash"
+    ("eval" body line 1)
+    invoked from within
+"eval launch_sim launch_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+                set savedCode $::errorCode
+                set savedInfo $::errorInfo
+                error $result $..."
+    invoked from within
+"if [catch {eval launch_sim launch_args_hash} result ] {
+            set status 1
+            if [ info exists ::errorCode ] {
+                set save..."
+    (procedure "run_sim" line 74)
+    invoked from within
+"run_sim run_sim_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+            set savedCode $::errorCode
+            set savedInfo $::errorInfo
+            error "$result" $savedInfo ..."
+    (procedure "run_eda_simulation_tool" line 334)
+    invoked from within
+"run_eda_simulation_tool eda_opts_hash"
