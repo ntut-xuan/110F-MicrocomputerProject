@@ -1,0 +1,12 @@
+entity mux4to1 is
+	port(input: in std_logic_vector(3 downto 0); select_input: in std_logic_vector(1 downto 0); output: out std_logic);
+end mux4to1;
+
+architecture func of mux4to1 is
+	begin
+		with select_input select
+			output <= input(3) when "11",
+						 input(2) when "10",
+						 input(1) when "01",
+						 input(0) when others;
+end func;

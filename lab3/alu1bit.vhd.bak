@@ -1,0 +1,6 @@
+use work.halfadd_package;
+use work.mux4to1_package;
+
+entity alu1bit is
+	port(a, b, set: in std_logic; carry_out, result: out std_logic; opcode: in std_logic_vector(3 downto 0));
+end one_bit_alu;

@@ -1,0 +1,674 @@
+|alu7bit
+a[0] => alu1bit:a1bit7.a
+a[1] => alu1bit:a1bit6.a
+a[2] => alu1bit:a1bit5.a
+a[3] => alu1bit:a1bit4.a
+a[4] => alu1bit:a1bit3.a
+a[5] => alu1bit:a1bit2.a
+a[6] => alu1bit:a1bit1.a
+b[0] => alu1bit:a1bit7.b
+b[1] => alu1bit:a1bit6.b
+b[2] => alu1bit:a1bit5.b
+b[3] => alu1bit:a1bit4.b
+b[4] => alu1bit:a1bit3.b
+b[5] => alu1bit:a1bit2.b
+b[6] => alu1bit:a1bit1.b
+opcode[0] => alu1bit:a1bit7.opcode[0]
+opcode[0] => alu1bit:a1bit6.opcode[0]
+opcode[0] => alu1bit:a1bit5.opcode[0]
+opcode[0] => alu1bit:a1bit4.opcode[0]
+opcode[0] => alu1bit:a1bit3.opcode[0]
+opcode[0] => alu1bit:a1bit2.opcode[0]
+opcode[0] => alu1bit:a1bit1.opcode[0]
+opcode[1] => alu1bit:a1bit7.opcode[1]
+opcode[1] => alu1bit:a1bit6.opcode[1]
+opcode[1] => alu1bit:a1bit5.opcode[1]
+opcode[1] => alu1bit:a1bit4.opcode[1]
+opcode[1] => alu1bit:a1bit3.opcode[1]
+opcode[1] => alu1bit:a1bit2.opcode[1]
+opcode[1] => alu1bit:a1bit1.opcode[1]
+opcode[2] => alu1bit:a1bit7.opcode[2]
+opcode[2] => alu1bit:a1bit7.carry_in
+opcode[2] => alu1bit:a1bit6.opcode[2]
+opcode[2] => alu1bit:a1bit5.opcode[2]
+opcode[2] => alu1bit:a1bit4.opcode[2]
+opcode[2] => alu1bit:a1bit3.opcode[2]
+opcode[2] => alu1bit:a1bit2.opcode[2]
+opcode[2] => alu1bit:a1bit1.opcode[2]
+opcode[3] => alu1bit:a1bit7.opcode[3]
+opcode[3] => alu1bit:a1bit6.opcode[3]
+opcode[3] => alu1bit:a1bit5.opcode[3]
+opcode[3] => alu1bit:a1bit4.opcode[3]
+opcode[3] => alu1bit:a1bit3.opcode[3]
+opcode[3] => alu1bit:a1bit2.opcode[3]
+opcode[3] => alu1bit:a1bit1.opcode[3]
+seg1[0] <= sevenSegment:led2.ss_a
+seg1[1] <= sevenSegment:led2.ss_b
+seg1[2] <= sevenSegment:led2.ss_c
+seg1[3] <= sevenSegment:led2.ss_d
+seg1[4] <= sevenSegment:led2.ss_e
+seg1[5] <= sevenSegment:led2.ss_f
+seg1[6] <= sevenSegment:led2.ss_g
+seg2[0] <= sevenSegment:led1.ss_a
+seg2[1] <= sevenSegment:led1.ss_b
+seg2[2] <= sevenSegment:led1.ss_c
+seg2[3] <= sevenSegment:led1.ss_d
+seg2[4] <= sevenSegment:led1.ss_e
+seg2[5] <= sevenSegment:led1.ss_f
+seg2[6] <= sevenSegment:led1.ss_g
+
+
+|alu7bit|alu1bit:a1bit7
+a => mux2to1:mux1.a
+a => mux2to1:mux1.b
+b => mux2to1:mux2.a
+b => mux2to1:mux2.b
+less => mux4to1:bigmux.input[3]
+carry_in => fulladd:fulladd1.fa_cin
+carry_out <= fulladd:fulladd1.fa_out
+result <= mux4to1:bigmux.output
+set <= fulladd:fulladd1.fa_s
+opcode[0] => mux4to1:bigmux.select_input[0]
+opcode[1] => mux4to1:bigmux.select_input[1]
+opcode[2] => mux2to1:mux2.select_input
+opcode[3] => mux2to1:mux1.select_input
+
+
+|alu7bit|alu1bit:a1bit7|mux2to1:mux1
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit7|mux2to1:mux2
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit7|fulladd:fulladd1
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit7|mux4to1:bigmux
+input[0] => mux2to1:G1:0:muxes.a
+input[1] => mux2to1:G1:0:muxes.b
+input[2] => mux2to1:G1:1:muxes.a
+input[3] => mux2to1:G1:1:muxes.b
+select_input[0] => mux2to1:G1:1:muxes.select_input
+select_input[0] => mux2to1:G1:0:muxes.select_input
+select_input[1] => mux2to1:mux5.select_input
+output <= mux2to1:mux5.output
+
+
+|alu7bit|alu1bit:a1bit7|mux4to1:bigmux|mux2to1:\G1:1:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit7|mux4to1:bigmux|mux2to1:\G1:0:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit7|mux4to1:bigmux|mux2to1:mux5
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit6
+a => mux2to1:mux1.a
+a => mux2to1:mux1.b
+b => mux2to1:mux2.a
+b => mux2to1:mux2.b
+less => mux4to1:bigmux.input[3]
+carry_in => fulladd:fulladd1.fa_cin
+carry_out <= fulladd:fulladd1.fa_out
+result <= mux4to1:bigmux.output
+set <= fulladd:fulladd1.fa_s
+opcode[0] => mux4to1:bigmux.select_input[0]
+opcode[1] => mux4to1:bigmux.select_input[1]
+opcode[2] => mux2to1:mux2.select_input
+opcode[3] => mux2to1:mux1.select_input
+
+
+|alu7bit|alu1bit:a1bit6|mux2to1:mux1
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit6|mux2to1:mux2
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit6|fulladd:fulladd1
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit6|mux4to1:bigmux
+input[0] => mux2to1:G1:0:muxes.a
+input[1] => mux2to1:G1:0:muxes.b
+input[2] => mux2to1:G1:1:muxes.a
+input[3] => mux2to1:G1:1:muxes.b
+select_input[0] => mux2to1:G1:1:muxes.select_input
+select_input[0] => mux2to1:G1:0:muxes.select_input
+select_input[1] => mux2to1:mux5.select_input
+output <= mux2to1:mux5.output
+
+
+|alu7bit|alu1bit:a1bit6|mux4to1:bigmux|mux2to1:\G1:1:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit6|mux4to1:bigmux|mux2to1:\G1:0:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit6|mux4to1:bigmux|mux2to1:mux5
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit5
+a => mux2to1:mux1.a
+a => mux2to1:mux1.b
+b => mux2to1:mux2.a
+b => mux2to1:mux2.b
+less => mux4to1:bigmux.input[3]
+carry_in => fulladd:fulladd1.fa_cin
+carry_out <= fulladd:fulladd1.fa_out
+result <= mux4to1:bigmux.output
+set <= fulladd:fulladd1.fa_s
+opcode[0] => mux4to1:bigmux.select_input[0]
+opcode[1] => mux4to1:bigmux.select_input[1]
+opcode[2] => mux2to1:mux2.select_input
+opcode[3] => mux2to1:mux1.select_input
+
+
+|alu7bit|alu1bit:a1bit5|mux2to1:mux1
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit5|mux2to1:mux2
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit5|fulladd:fulladd1
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit5|mux4to1:bigmux
+input[0] => mux2to1:G1:0:muxes.a
+input[1] => mux2to1:G1:0:muxes.b
+input[2] => mux2to1:G1:1:muxes.a
+input[3] => mux2to1:G1:1:muxes.b
+select_input[0] => mux2to1:G1:1:muxes.select_input
+select_input[0] => mux2to1:G1:0:muxes.select_input
+select_input[1] => mux2to1:mux5.select_input
+output <= mux2to1:mux5.output
+
+
+|alu7bit|alu1bit:a1bit5|mux4to1:bigmux|mux2to1:\G1:1:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit5|mux4to1:bigmux|mux2to1:\G1:0:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit5|mux4to1:bigmux|mux2to1:mux5
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit4
+a => mux2to1:mux1.a
+a => mux2to1:mux1.b
+b => mux2to1:mux2.a
+b => mux2to1:mux2.b
+less => mux4to1:bigmux.input[3]
+carry_in => fulladd:fulladd1.fa_cin
+carry_out <= fulladd:fulladd1.fa_out
+result <= mux4to1:bigmux.output
+set <= fulladd:fulladd1.fa_s
+opcode[0] => mux4to1:bigmux.select_input[0]
+opcode[1] => mux4to1:bigmux.select_input[1]
+opcode[2] => mux2to1:mux2.select_input
+opcode[3] => mux2to1:mux1.select_input
+
+
+|alu7bit|alu1bit:a1bit4|mux2to1:mux1
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit4|mux2to1:mux2
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit4|fulladd:fulladd1
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit4|mux4to1:bigmux
+input[0] => mux2to1:G1:0:muxes.a
+input[1] => mux2to1:G1:0:muxes.b
+input[2] => mux2to1:G1:1:muxes.a
+input[3] => mux2to1:G1:1:muxes.b
+select_input[0] => mux2to1:G1:1:muxes.select_input
+select_input[0] => mux2to1:G1:0:muxes.select_input
+select_input[1] => mux2to1:mux5.select_input
+output <= mux2to1:mux5.output
+
+
+|alu7bit|alu1bit:a1bit4|mux4to1:bigmux|mux2to1:\G1:1:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit4|mux4to1:bigmux|mux2to1:\G1:0:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit4|mux4to1:bigmux|mux2to1:mux5
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit3
+a => mux2to1:mux1.a
+a => mux2to1:mux1.b
+b => mux2to1:mux2.a
+b => mux2to1:mux2.b
+less => mux4to1:bigmux.input[3]
+carry_in => fulladd:fulladd1.fa_cin
+carry_out <= fulladd:fulladd1.fa_out
+result <= mux4to1:bigmux.output
+set <= fulladd:fulladd1.fa_s
+opcode[0] => mux4to1:bigmux.select_input[0]
+opcode[1] => mux4to1:bigmux.select_input[1]
+opcode[2] => mux2to1:mux2.select_input
+opcode[3] => mux2to1:mux1.select_input
+
+
+|alu7bit|alu1bit:a1bit3|mux2to1:mux1
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit3|mux2to1:mux2
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit3|fulladd:fulladd1
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit3|mux4to1:bigmux
+input[0] => mux2to1:G1:0:muxes.a
+input[1] => mux2to1:G1:0:muxes.b
+input[2] => mux2to1:G1:1:muxes.a
+input[3] => mux2to1:G1:1:muxes.b
+select_input[0] => mux2to1:G1:1:muxes.select_input
+select_input[0] => mux2to1:G1:0:muxes.select_input
+select_input[1] => mux2to1:mux5.select_input
+output <= mux2to1:mux5.output
+
+
+|alu7bit|alu1bit:a1bit3|mux4to1:bigmux|mux2to1:\G1:1:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit3|mux4to1:bigmux|mux2to1:\G1:0:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit3|mux4to1:bigmux|mux2to1:mux5
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit2
+a => mux2to1:mux1.a
+a => mux2to1:mux1.b
+b => mux2to1:mux2.a
+b => mux2to1:mux2.b
+less => mux4to1:bigmux.input[3]
+carry_in => fulladd:fulladd1.fa_cin
+carry_out <= fulladd:fulladd1.fa_out
+result <= mux4to1:bigmux.output
+set <= fulladd:fulladd1.fa_s
+opcode[0] => mux4to1:bigmux.select_input[0]
+opcode[1] => mux4to1:bigmux.select_input[1]
+opcode[2] => mux2to1:mux2.select_input
+opcode[3] => mux2to1:mux1.select_input
+
+
+|alu7bit|alu1bit:a1bit2|mux2to1:mux1
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit2|mux2to1:mux2
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit2|fulladd:fulladd1
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit2|mux4to1:bigmux
+input[0] => mux2to1:G1:0:muxes.a
+input[1] => mux2to1:G1:0:muxes.b
+input[2] => mux2to1:G1:1:muxes.a
+input[3] => mux2to1:G1:1:muxes.b
+select_input[0] => mux2to1:G1:1:muxes.select_input
+select_input[0] => mux2to1:G1:0:muxes.select_input
+select_input[1] => mux2to1:mux5.select_input
+output <= mux2to1:mux5.output
+
+
+|alu7bit|alu1bit:a1bit2|mux4to1:bigmux|mux2to1:\G1:1:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit2|mux4to1:bigmux|mux2to1:\G1:0:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit2|mux4to1:bigmux|mux2to1:mux5
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit1
+a => mux2to1:mux1.a
+a => mux2to1:mux1.b
+b => mux2to1:mux2.a
+b => mux2to1:mux2.b
+less => mux4to1:bigmux.input[3]
+carry_in => fulladd:fulladd1.fa_cin
+carry_out <= fulladd:fulladd1.fa_out
+result <= mux4to1:bigmux.output
+set <= fulladd:fulladd1.fa_s
+opcode[0] => mux4to1:bigmux.select_input[0]
+opcode[1] => mux4to1:bigmux.select_input[1]
+opcode[2] => mux2to1:mux2.select_input
+opcode[3] => mux2to1:mux1.select_input
+
+
+|alu7bit|alu1bit:a1bit1|mux2to1:mux1
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit1|mux2to1:mux2
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit1|fulladd:fulladd1
+fa_cin => fa_s.IN1
+fa_cin => fa_out.IN0
+fa_cin => fa_out.IN0
+fa_x => fa_s.IN0
+fa_x => fa_out.IN0
+fa_x => fa_out.IN1
+fa_y => fa_s.IN1
+fa_y => fa_out.IN1
+fa_y => fa_out.IN1
+fa_s <= fa_s.DB_MAX_OUTPUT_PORT_TYPE
+fa_out <= fa_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit1|mux4to1:bigmux
+input[0] => mux2to1:G1:0:muxes.a
+input[1] => mux2to1:G1:0:muxes.b
+input[2] => mux2to1:G1:1:muxes.a
+input[3] => mux2to1:G1:1:muxes.b
+select_input[0] => mux2to1:G1:1:muxes.select_input
+select_input[0] => mux2to1:G1:0:muxes.select_input
+select_input[1] => mux2to1:mux5.select_input
+output <= mux2to1:mux5.output
+
+
+|alu7bit|alu1bit:a1bit1|mux4to1:bigmux|mux2to1:\G1:1:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit1|mux4to1:bigmux|mux2to1:\G1:0:muxes
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|alu1bit:a1bit1|mux4to1:bigmux|mux2to1:mux5
+a => output.DATAB
+b => output.DATAA
+select_input => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|sevenSegment:led1
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_b.IN1
+ss_y => ss_b.IN1
+ss_y => ss_c.IN1
+ss_y => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_e.IN1
+ss_z => ss_a.IN1
+ss_z => ss_a.IN1
+ss_z => ss_a.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_d.IN1
+ss_z => ss_e.IN1
+ss_z => ss_e.IN1
+ss_z => ss_a.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_c.IN1
+ss_z => ss_d.IN1
+ss_z => ss_g.IN1
+ss_a <= ss_a.DB_MAX_OUTPUT_PORT_TYPE
+ss_b <= ss_b.DB_MAX_OUTPUT_PORT_TYPE
+ss_c <= ss_c.DB_MAX_OUTPUT_PORT_TYPE
+ss_d <= ss_d.DB_MAX_OUTPUT_PORT_TYPE
+ss_e <= ss_e.DB_MAX_OUTPUT_PORT_TYPE
+ss_f <= ss_f.DB_MAX_OUTPUT_PORT_TYPE
+ss_g <= ss_g.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu7bit|sevenSegment:led2
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_w => ss_a.IN0
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_x => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_b.IN1
+ss_y => ss_b.IN1
+ss_y => ss_c.IN1
+ss_y => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_a.IN1
+ss_y => ss_e.IN1
+ss_z => ss_a.IN1
+ss_z => ss_a.IN1
+ss_z => ss_a.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_d.IN1
+ss_z => ss_e.IN1
+ss_z => ss_e.IN1
+ss_z => ss_a.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_b.IN1
+ss_z => ss_c.IN1
+ss_z => ss_d.IN1
+ss_z => ss_g.IN1
+ss_a <= ss_a.DB_MAX_OUTPUT_PORT_TYPE
+ss_b <= ss_b.DB_MAX_OUTPUT_PORT_TYPE
+ss_c <= ss_c.DB_MAX_OUTPUT_PORT_TYPE
+ss_d <= ss_d.DB_MAX_OUTPUT_PORT_TYPE
+ss_e <= ss_e.DB_MAX_OUTPUT_PORT_TYPE
+ss_f <= ss_f.DB_MAX_OUTPUT_PORT_TYPE
+ss_g <= ss_g.DB_MAX_OUTPUT_PORT_TYPE
+
+

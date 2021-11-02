@@ -1,0 +1,4 @@
+entity alu7bit is
+	port (a, b: in std_logic_vector(6 downto 0); opcode: in std_logic_vector(3 downto 0); output: out std_logic_vector(6 downto 0));
+end alu7bit;
+
