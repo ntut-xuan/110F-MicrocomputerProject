@@ -4,8 +4,8 @@ Info: Start Nativelink Simulation process
 
 Sim Mode              :  Gate
 Family                :  cycloneive
-Quartus root          :  c:/intelfpga_lite/18.1/quartus/bin64/
-Quartus sim root      :  c:/intelfpga_lite/18.1/quartus/eda/sim_lib
+Quartus root          :  d:/programfiles/quartus18.1/quartus/bin64/
+Quartus sim root      :  d:/programfiles/quartus18.1/quartus/eda/sim_lib
 Simulation Tool       :  modelsim-altera
 Simulation Language   :  vhdl
 Version               :  93
@@ -17,10 +17,10 @@ Sim dir               :  simulation\modelsim
 =======================================================
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
-Sourced NativeLink script c:/intelfpga_lite/18.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File lab3_run_msim_gate_vhdl.do already exists - backing up current file as lab3_run_msim_gate_vhdl.do.bak11
+Sourced NativeLink script d:/programfiles/quartus18.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File lab3_run_msim_gate_vhdl.do already exists - backing up current file as lab3_run_msim_gate_vhdl.do.bak3
 Probing transcript
-ModelSim-Altera Info: # Reading C:/intelFPGA_lite/18.1/modelsim_ae/tcl/vsim/pref.tcl
+ModelSim-Altera Info: # Reading D:/ProgramFiles/Quartus18.1/modelsim_ase/tcl/vsim/pref.tcl
 ModelSim-Altera Info: # do lab3_run_msim_gate_vhdl.do
 ModelSim-Altera Info: # if {[file exists gate_work]} {
 ModelSim-Altera Info: # 	vdel -lib gate_work -all
@@ -29,12 +29,12 @@ ModelSim-Altera Info: # vlib gate_work
 ModelSim-Altera Info: # vmap work gate_work
 ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
 ModelSim-Altera Info: # vmap work gate_work 
-ModelSim-Altera Info: # Copying C:/intelFPGA_lite/18.1/modelsim_ae/win32aloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Copying D:/ProgramFiles/Quartus18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 ModelSim-Altera Info: # Modifying modelsim.ini
 ModelSim-Altera Info: # 
 ModelSim-Altera Info: # vcom -93 -work work {lab3.vho}
 ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-ModelSim-Altera Info: # Start time: 03:05:59 on Nov 01,2021
+ModelSim-Altera Info: # Start time: 15:36:18 on Nov 03,2021
 ModelSim-Altera Info: # vcom -reportprogress 300 -93 -work work lab3.vho 
 ModelSim-Altera Info: # -- Loading package STANDARD
 ModelSim-Altera Info: # -- Loading package TEXTIO
@@ -45,27 +45,38 @@ ModelSim-Altera Info: # -- Loading package cycloneive_atom_pack
 ModelSim-Altera Info: # -- Loading package cycloneive_components
 ModelSim-Altera Info: # -- Compiling entity hard_block
 ModelSim-Altera Info: # -- Compiling architecture structure of hard_block
-ModelSim-Altera Info: # -- Compiling entity alu7bit
-ModelSim-Altera Info: # -- Compiling architecture structure of alu7bit
-ModelSim-Altera Info: # End time: 03:05:59 on Nov 01,2021, Elapsed time: 0:00:00
+ModelSim-Altera Info: # -- Compiling entity alu1bit
+ModelSim-Altera Info: # -- Compiling architecture structure of alu1bit
+ModelSim-Altera Info: # End time: 15:36:18 on Nov 03,2021, Elapsed time: 0:00:00
 ModelSim-Altera Info: # Errors: 0, Warnings: 0
 ModelSim-Altera Info: # 
-ModelSim-Altera Info: vsim work.alu7bit
-ModelSim-Altera Info: # vsim work.alu7bit 
-ModelSim-Altera Info: # Start time: 03:06:34 on Nov 01,2021
-ModelSim-Altera Info: # //  ModelSim - Intel FPGA Edition 10.5b Oct  5 2016
-ModelSim-Altera Info: # //
-ModelSim-Altera Info: # //  Copyright 1991-2016 Mentor Graphics Corporation
-ModelSim-Altera Info: # //  All Rights Reserved.
-ModelSim-Altera Info: # //
-ModelSim-Altera Info: # //  ModelSim - Intel FPGA Edition and its associated documentation contain trade
-ModelSim-Altera Info: # //  secrets and commercial or financial information that are the property of
-ModelSim-Altera Info: # //  Mentor Graphics Corporation and are privileged, confidential,
-ModelSim-Altera Info: # //  and exempt from disclosure under the Freedom of Information Act,
-ModelSim-Altera Info: # //  5 U.S.C. Section 552. Furthermore, this information
-ModelSim-Altera Info: # //  is prohibited from disclosure under the Trade Secrets Act,
-ModelSim-Altera Info: # //  18 U.S.C. Section 1905.
-ModelSim-Altera Info: # //
+ModelSim-Altera Info: # vcom -93 -work work {D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd}
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+ModelSim-Altera Info: # Start time: 15:36:18 on Nov 03,2021
+ModelSim-Altera Info: # vcom -reportprogress 300 -93 -work work D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd 
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Error: # ** Error: (vcom-11) Could not find work.fulladd_package.
+ModelSim-Altera Info: # ** Error (suppressible): D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd(3): (vcom-1195) Cannot find expanded name "work.fulladd_package".
+ModelSim-Altera Error: # ** Error: D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd(3): Unknown expanded name.
+ModelSim-Altera Error: # ** Error: (vcom-11) Could not find work.mux2to1_package.
+ModelSim-Altera Info: # ** Error (suppressible): D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd(4): (vcom-1195) Cannot find expanded name "work.mux2to1_package".
+ModelSim-Altera Error: # ** Error: D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd(4): Unknown expanded name.
+ModelSim-Altera Error: # ** Error: (vcom-11) Could not find work.mux4to1_package.
+ModelSim-Altera Info: # ** Error (suppressible): D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd(5): (vcom-1195) Cannot find expanded name "work.mux4to1_package".
+ModelSim-Altera Error: # ** Error: D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd(5): Unknown expanded name.
+ModelSim-Altera Error: # ** Error: D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd(7): VHDL Compiler exiting
+ModelSim-Altera Info: # End time: 15:36:18 on Nov 03,2021, Elapsed time: 0:00:00
+ModelSim-Altera Info: # Errors: 10, Warnings: 0
+ModelSim-Altera Error: # ** Error: D:/ProgramFiles/Quartus18.1/modelsim_ase/win32aloem/vcom failed.
+ModelSim-Altera Info: # Error in macro ./lab3_run_msim_gate_vhdl.do line 10
+ModelSim-Altera Info: # D:/ProgramFiles/Quartus18.1/modelsim_ase/win32aloem/vcom failed.
+ModelSim-Altera Info: #     while executing
+ModelSim-Altera Info: # "vcom -93 -work work {D:/NTUT 110-1/Quartus HW/110F-MicrocomputerProject/lab3/alu1bit.vhd}"
+ModelSim-Altera Info: vsim work.alu1bit
+ModelSim-Altera Info: # vsim work.alu1bit 
+ModelSim-Altera Info: # Start time: 15:36:22 on Nov 03,2021
 ModelSim-Altera Info: # Loading std.standard
 ModelSim-Altera Info: # Loading std.textio(body)
 ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
@@ -73,23 +84,217 @@ ModelSim-Altera Info: # Loading ieee.vital_timing(body)
 ModelSim-Altera Info: # Loading ieee.vital_primitives(body)
 ModelSim-Altera Info: # Loading cycloneive.cycloneive_atom_pack(body)
 ModelSim-Altera Info: # Loading cycloneive.cycloneive_components
-ModelSim-Altera Info: # Loading work.alu7bit(structure)
+ModelSim-Altera Info: # Loading work.alu1bit(structure)
 ModelSim-Altera Info: # Loading work.hard_block(structure)
 ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
 ModelSim-Altera Info: # Loading cycloneive.cycloneive_io_obuf(arch)
 ModelSim-Altera Info: # Loading cycloneive.cycloneive_io_ibuf(arch)
 ModelSim-Altera Info: # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
-ModelSim-Altera Info: force -freeze sim:/alu7bit/a 0111111 0
-ModelSim-Altera Info: force -freeze sim:/alu7bit/b 0101010 0
-ModelSim-Altera Info: force -freeze sim:/alu7bit/cin0 0 0
-ModelSim-Altera Info: force -freeze sim:/alu7bit/less 0 0
-ModelSim-Altera Info: force -freeze sim:/alu7bit/opcode 0111 0
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/a
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/b
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/carry_in
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/carry_out
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\opcode\[0\]~input_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\opcode\[1\]~input_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\opcode\[2\]~input_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\opcode\[3\]~input_o\\
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[0\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[1\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[2\]~input_o\\ 1 0
+ModelSim-Altera Info: noforce sim:/alu1bit/\\opcode\[3\]~input_o\\
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[3\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 1 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 1 0
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/less
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/result
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/set
 ModelSim-Altera Info: run
-ModelSim-Altera Info: force -freeze sim:/alu7bit/a 1111111 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/carry_in 1 0
 ModelSim-Altera Info: run
-ModelSim-Altera Info: force -freeze sim:/alu7bit/a 0111111 0
-ModelSim-Altera Info: force -freeze sim:/alu7bit/opcode 0110 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 0 0
 ModelSim-Altera Info: run
-ModelSim-Altera Info: # End time: 03:08:10 on Nov 01,2021, Elapsed time: 0:01:36
+ModelSim-Altera Info: restart -f
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 0 0, 1 {50 ps} -r 100
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 0 0, 1 {100 ps} -r 200
+ModelSim-Altera Info: force -freeze sim:/alu1bit/carry_in 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[0\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[1\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[2\]~input_o\\ 1 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[3\]~input_o\\ 0 0
+ModelSim-Altera Info: add wave -position end  sim:/alu1bit/\fulladd1|fa_s~combout\
+ModelSim-Altera Info: add wave -position end  sim:/alu1bit/\fulladd1|fa_out~0_combout\
+ModelSim-Altera Info: add wave -position end  sim:/alu1bit/\carry_in~input_o\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\a~input_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\b~input_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\carry_in~input_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\carry_out~output_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\opcode\[0\]~input_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\opcode\[1\]~input_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\opcode\[2\]~input_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\opcode\[3\]~input_o\\
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[0\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[1\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[2\]~input_o\\ 1 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[3\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\carry_in~input_o\\ 1 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\a~input_o\\ 1 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\b~input_o\\ 1 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/result
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\a~input_o\\ 0 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\fulladd1|fa_s~combout\\
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\a~input_o\\ 1 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\fulladd1|fa_out~0_combout\\
+ModelSim-Altera Info: restart -f
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[0\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[1\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[2\]~input_o\\ 1 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\opcode\[3\]~input_o\\ 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\a~input_o\\ 1 0, 0 {50 ps} -r 100
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\a~input_o\\ 0 0, 1 {50 ps} -r 100
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\b~input_o\\ 0 0, 1 {100 ps} -r 200
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\carry_in~input_o\\ 0 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\carry_out~output_o\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\mux2|output~0_combout\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\mux2|output~0_combout\\
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\set~output_o\\
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/result
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/set
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/opcode
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/a
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/b
+ModelSim-Altera Info: force -freeze sim:/alu1bit/opcode 0010 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 0 0, 1 {50 ps} -r 100
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 0 0, 1 {100 ps} -r 200
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/carry_out
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/carry_in
+ModelSim-Altera Info: force -freeze sim:/alu1bit/carry_in 1 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\fulladd1|fa_out~0_combout\\
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\fulladd1|fa_s~combout\\
+ModelSim-Altera Info: restart -f
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 0 0, 1 {50 ps} -r 100
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 0 0, 1 {100 ps} -r 200
+ModelSim-Altera Info: force -freeze sim:/alu1bit/carry_in 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/opcode 0010 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: force -freeze sim:/alu1bit/carry_in 1 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: force -freeze sim:/alu1bit/opcode 0110 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: restart -f
+ModelSim-Altera Info: force -freeze sim:/alu1bit/opcode 0110 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 0 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 0 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: force -freeze sim:/alu1bit/carry_in 0 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 1 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 1 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/set
+ModelSim-Altera Info: restart -f
+ModelSim-Altera Info: force -freeze sim:/alu1bit/opcode 1100 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 1 0
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 1 0
+ModelSim-Altera Info: noforce sim:/alu1bit/carry_in
+ModelSim-Altera Info: force -freeze sim:/alu1bit/\\fulladd1|fa_s~combout\\ 0 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/result
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 0 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/alu1bit/\\bigmux|mux5|output~0_combout\\
+ModelSim-Altera Info: run
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 0 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: force -freeze sim:/alu1bit/a 1 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: force -freeze sim:/alu1bit/b 1 0
+ModelSim-Altera Info: run
+ModelSim-Altera Info: # End time: 16:03:02 on Nov 03,2021, Elapsed time: 0:26:40
 ModelSim-Altera Info: # Errors: 0, Warnings: 0
-Info: NativeLink simulation flow was successful
+Error: Errors encountered while running modelsim do file
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  1
+Nativelink TCL script failed with errorInfo:  1
+    (procedure "launch_sim" line 1)
+    invoked from within
+"launch_sim launch_args_hash"
+    ("eval" body line 1)
+    invoked from within
+"eval launch_sim launch_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+                set savedCode $::errorCode
+                set savedInfo $::errorInfo
+                error $result $..."
+    invoked from within
+"if [catch {eval launch_sim launch_args_hash} result ] {
+            set status 1
+            if [ info exists ::errorCode ] {
+                set save..."
+    (procedure "run_sim" line 74)
+    invoked from within
+"run_sim run_sim_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+            set savedCode $::errorCode
+            set savedInfo $::errorInfo
+            error "$result" $savedInfo ..."
+    (procedure "run_eda_simulation_tool" line 334)
+    invoked from within
+"run_eda_simulation_tool eda_opts_hash"

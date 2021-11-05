@@ -4,67 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "seg1[0]",
+					"name" : "carry_out",
 					"strict" : false
 				},
 				{
-					"name" : "seg1[1]",
+					"name" : "result",
 					"strict" : false
 				},
 				{
-					"name" : "seg1[2]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[3]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[4]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[5]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[6]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[0]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[1]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[2]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[3]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[4]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[5]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[6]",
-					"strict" : false
-				},
-				{
-					"name" : "b[0]",
-					"strict" : false
-				},
-				{
-					"name" : "a[0]",
+					"name" : "set",
 					"strict" : false
 				},
 				{
@@ -72,7 +20,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "opcode[1]",
+					"name" : "a",
+					"strict" : false
+				},
+				{
+					"name" : "carry_in",
+					"strict" : false
+				},
+				{
+					"name" : "b",
 					"strict" : false
 				},
 				{
@@ -80,55 +36,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "opcode[1]",
+					"strict" : false
+				},
+				{
 					"name" : "opcode[0]",
 					"strict" : false
 				},
 				{
-					"name" : "a[5]",
-					"strict" : false
-				},
-				{
-					"name" : "a[4]",
-					"strict" : false
-				},
-				{
-					"name" : "a[3]",
-					"strict" : false
-				},
-				{
-					"name" : "a[2]",
-					"strict" : false
-				},
-				{
-					"name" : "a[1]",
-					"strict" : false
-				},
-				{
-					"name" : "b[1]",
-					"strict" : false
-				},
-				{
-					"name" : "b[2]",
-					"strict" : false
-				},
-				{
-					"name" : "b[3]",
-					"strict" : false
-				},
-				{
-					"name" : "b[4]",
-					"strict" : false
-				},
-				{
-					"name" : "b[5]",
-					"strict" : false
-				},
-				{
-					"name" : "a[6]",
-					"strict" : false
-				},
-				{
-					"name" : "b[6]",
+					"name" : "less",
 					"strict" : false
 				}
 			]
