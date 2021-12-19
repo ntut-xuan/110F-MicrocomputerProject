@@ -16,15 +16,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "w",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},
 				{
 					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "w",
 					"strict" : false
 				}
 			]

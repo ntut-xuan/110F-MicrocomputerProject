@@ -12,7 +12,7 @@ architecture logicFun of FSM is
 BEGIN 
 	PROCESS(reset, clk)
 	BEGIN
-		if(reset = '0') THEN
+		if(reset = '1') THEN
 			y <= S0;
 		elsif(clk'Event and clk = '1') then
 			case y is
@@ -41,20 +41,19 @@ BEGIN
 				when S4 =>
 					y <= S4;
 			end case;
-			
-			if(y = S0) then
-				output <= "000";
-			elsif (y = S1) then
-				output <= "001";
-			elsif (y = S2A) then
-				output <= "010";
-			elsif (y = S2B) then
-				output <= "011";
-			elsif (y = S3) then
-				output <= "100";
-			else
-				output <= "101";
-			end if;
+		end if;
+		if(y = S0) then
+			output <= "000";
+		elsif (y = S1) then
+			output <= "001";
+		elsif (y = S2A) then
+			output <= "010";
+		elsif (y = S2B) then
+			output <= "011";
+		elsif (y = S3) then
+			output <= "100";
+		else	
+			output <= "101";
 		end if;
 	end PROCESS;
 end logicFun;
