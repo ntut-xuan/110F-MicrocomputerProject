@@ -1,0 +1,659 @@
+Analysis & Synthesis report for 8bit-div
+Tue Dec 21 03:00:57 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |eight_bits_div|y
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |eight_bits_div
+ 13. Parameter Settings for User Entity Instance: subtractor:dd_subtractor
+ 14. Parameter Settings for User Entity Instance: U_Shift:divisor_sr
+ 15. Parameter Settings for User Entity Instance: U_Shift:remainder_sr
+ 16. Parameter Settings for User Entity Instance: U_Shift:qutoient_sr
+ 17. Port Connectivity Checks: "U_Shift:qutoient_sr"
+ 18. Port Connectivity Checks: "U_Shift:remainder_sr"
+ 19. Port Connectivity Checks: "U_Shift:divisor_sr"
+ 20. Port Connectivity Checks: "subtractor:dd_subtractor"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Dec 21 03:00:57 2021       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; 8bit-div                                    ;
+; Top-level Entity Name              ; eight_bits_div                              ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 90                                          ;
+;     Total combinational functions  ; 79                                          ;
+;     Dedicated logic registers      ; 26                                          ;
+; Total registers                    ; 26                                          ;
+; Total pins                         ; 103                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; eight_bits_div     ; 8bit-div           ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; main.vhd                         ; yes             ; User VHDL File  ; C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/main.vhd                   ;         ;
+; lab6.vhd                         ; yes             ; User VHDL File  ; C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd                   ;         ;
+; shift_register_package.vhd       ; yes             ; User VHDL File  ; C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/shift_register_package.vhd ;         ;
+; subtractor.vhd                   ; yes             ; User VHDL File  ; C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/subtractor.vhd             ;         ;
+; subtractor_package.vhd           ; yes             ; User VHDL File  ; C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/subtractor_package.vhd     ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 90          ;
+;                                             ;             ;
+; Total combinational functions               ; 79          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 34          ;
+;     -- 3 input functions                    ; 32          ;
+;     -- <=2 input functions                  ; 13          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 64          ;
+;     -- arithmetic mode                      ; 15          ;
+;                                             ;             ;
+; Total registers                             ; 26          ;
+;     -- Dedicated logic registers            ; 26          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 103         ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 27          ;
+; Total fan-out                               ; 509         ;
+; Average fan-out                             ; 1.64        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name    ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+----------------+--------------+
+; |eight_bits_div               ; 79 (70)             ; 26 (6)                    ; 0           ; 0            ; 0       ; 0         ; 103  ; 0            ; |eight_bits_div                          ; eight_bits_div ; work         ;
+;    |U_Shift:qutoient_sr|      ; 1 (1)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eight_bits_div|U_Shift:qutoient_sr      ; U_Shift        ; work         ;
+;    |U_Shift:remainder_sr|     ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eight_bits_div|U_Shift:remainder_sr     ; U_Shift        ; work         ;
+;    |subtractor:dd_subtractor| ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eight_bits_div|subtractor:dd_subtractor ; subtractor     ; work         ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------+
+; State Machine - |eight_bits_div|y                 ;
++-------+------+------+-------+-------+------+------+
+; Name  ; y.S4 ; y.S3 ; y.S2B ; y.S2A ; y.S1 ; y.S0 ;
++-------+------+------+-------+-------+------+------+
+; y.S0  ; 0    ; 0    ; 0     ; 0     ; 0    ; 0    ;
+; y.S1  ; 0    ; 0    ; 0     ; 0     ; 1    ; 1    ;
+; y.S2A ; 0    ; 0    ; 0     ; 1     ; 0    ; 1    ;
+; y.S2B ; 0    ; 0    ; 1     ; 0     ; 0    ; 1    ;
+; y.S3  ; 0    ; 1    ; 0     ; 0     ; 0    ; 1    ;
+; y.S4  ; 1    ; 0    ; 0     ; 0     ; 0    ; 1    ;
++-------+------+------+-------+-------+------+------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; w[0]$latch                                          ; w                   ; yes                    ;
+; w[1]$latch                                          ; w                   ; yes                    ;
+; step[0]$latch                                       ; Selector1           ; yes                    ;
+; step[1]$latch                                       ; Selector1           ; yes                    ;
+; step[2]$latch                                       ; Selector1           ; yes                    ;
+; step[3]$latch                                       ; Equal3              ; yes                    ;
+; step[4]$latch                                       ; Equal3              ; yes                    ;
+; step[5]$latch                                       ; Equal3              ; yes                    ;
+; step[6]$latch                                       ; Equal3              ; yes                    ;
+; step[7]$latch                                       ; Equal3              ; yes                    ;
+; step[8]$latch                                       ; Equal3              ; yes                    ;
+; step[9]$latch                                       ; Equal3              ; yes                    ;
+; step[10]$latch                                      ; Equal3              ; yes                    ;
+; step[11]$latch                                      ; Equal3              ; yes                    ;
+; step[12]$latch                                      ; Equal3              ; yes                    ;
+; step[13]$latch                                      ; Equal3              ; yes                    ;
+; step[14]$latch                                      ; Equal3              ; yes                    ;
+; step[15]$latch                                      ; Equal3              ; yes                    ;
+; step[16]$latch                                      ; Equal3              ; yes                    ;
+; step[17]$latch                                      ; Equal3              ; yes                    ;
+; step[18]$latch                                      ; Equal3              ; yes                    ;
+; step[19]$latch                                      ; Equal3              ; yes                    ;
+; step[20]$latch                                      ; Equal3              ; yes                    ;
+; step[21]$latch                                      ; Equal3              ; yes                    ;
+; step[22]$latch                                      ; Equal3              ; yes                    ;
+; step[23]$latch                                      ; Equal3              ; yes                    ;
+; step[24]$latch                                      ; Equal3              ; yes                    ;
+; step[25]$latch                                      ; Equal3              ; yes                    ;
+; step[26]$latch                                      ; Equal3              ; yes                    ;
+; step[27]$latch                                      ; Equal3              ; yes                    ;
+; step[28]$latch                                      ; Equal3              ; yes                    ;
+; step[29]$latch                                      ; Equal3              ; yes                    ;
+; step[30]$latch                                      ; Equal3              ; yes                    ;
+; step[31]$latch                                      ; Equal3              ; yes                    ;
+; subtractor_load$latch                               ; WideOr0             ; yes                    ;
+; quotient_set                                        ; step                ; yes                    ;
+; quotient_load                                       ; WideOr4             ; yes                    ;
+; Number of user-specified and inferred latches = 37  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 26    ;
+; Number of registers using Synchronous Clear  ; 6     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 26    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 6     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |eight_bits_div|Selector6  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |eight_bits_div|Selector7  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |eight_bits_div ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: subtractor:dd_subtractor ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; n              ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: U_Shift:divisor_sr ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; n              ; 8     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: U_Shift:remainder_sr ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 8     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: U_Shift:qutoient_sr ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "U_Shift:qutoient_sr" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; lr_sel ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "U_Shift:remainder_sr" ;
++--------+-------+----------+----------------------+
+; Port   ; Type  ; Severity ; Details              ;
++--------+-------+----------+----------------------+
+; load   ; Input ; Info     ; Stuck at VCC         ;
+; lr_sel ; Input ; Info     ; Stuck at VCC         ;
+; sdi    ; Input ; Info     ; Stuck at GND         ;
++--------+-------+----------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "U_Shift:divisor_sr"                                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; load     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; lr_sel   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; di[3..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sdi      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; qo       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "subtractor:dd_subtractor" ;
++------------------+-------+----------+----------------+
+; Port             ; Type  ; Severity ; Details        ;
++------------------+-------+----------+----------------+
+; load_input[7..4] ; Input ; Info     ; Stuck at GND   ;
+; minus[3..0]      ; Input ; Info     ; Stuck at GND   ;
++------------------+-------+----------+----------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 103                         ;
+; cycloneiii_ff         ; 26                          ;
+;     CLR               ; 16                          ;
+;     CLR SCLR          ; 4                           ;
+;     ENA CLR           ; 4                           ;
+;     ENA CLR SCLR      ; 2                           ;
+; cycloneiii_lcell_comb ; 80                          ;
+;     arith             ; 15                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 11                          ;
+;     normal            ; 65                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 34                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.80                        ;
+; Average LUT depth     ; 3.52                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Dec 21 03:00:18 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab6 -c 8bit-div
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
+    Info (12022): Found design unit 1: U_Shift-func File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/main.vhd Line: 17
+    Info (12023): Found entity 1: U_Shift File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/main.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file lab6.vhd
+    Info (12022): Found design unit 1: eight_bits_div-func File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 25
+    Info (12023): Found entity 1: eight_bits_div File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 8
+Info (12021): Found 1 design units, including 0 entities, in source file shift_register_package.vhd
+    Info (12022): Found design unit 1: shiftRegister_package File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/shift_register_package.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file subtractor.vhd
+    Info (12022): Found design unit 1: subtractor-func File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/subtractor.vhd Line: 11
+    Info (12023): Found entity 1: subtractor File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/subtractor.vhd Line: 6
+Info (12021): Found 1 design units, including 0 entities, in source file subtractor_package.vhd
+    Info (12022): Found design unit 1: subtractor_package File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/subtractor_package.vhd Line: 4
+Info (12127): Elaborating entity "eight_bits_div" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at lab6.vhd(32): used explicit default value for signal "remainder_load" because signal was never assigned a value File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 32
+Warning (10540): VHDL Signal Declaration warning at lab6.vhd(33): used explicit default value for signal "remainder_shift" because signal was never assigned a value File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 33
+Warning (10036): Verilog HDL or VHDL warning at lab6.vhd(35): object "temp_divisor" assigned a value but never read File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at lab6.vhd(102): signal "remainder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at lab6.vhd(102): signal "fixed_dividend" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at lab6.vhd(109): signal "remainder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at lab6.vhd(109): signal "fixed_dividend" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at lab6.vhd(109): signal "fixed_divisor" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at lab6.vhd(110): signal "remainder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at lab6.vhd(110): signal "fixed_divisor" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at lab6.vhd(111): signal "fixed_dividend" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at lab6.vhd(111): signal "fixed_divisor" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at lab6.vhd(128): signal "remainder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at lab6.vhd(128): signal "fixed_dividend" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 128
+Warning (10631): VHDL Process Statement warning at lab6.vhd(95): inferring latch(es) for signal or variable "subtractor_load", which holds its previous value in one or more paths through the process File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Warning (10631): VHDL Process Statement warning at lab6.vhd(95): inferring latch(es) for signal or variable "step", which holds its previous value in one or more paths through the process File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Warning (10631): VHDL Process Statement warning at lab6.vhd(95): inferring latch(es) for signal or variable "w", which holds its previous value in one or more paths through the process File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Warning (10631): VHDL Process Statement warning at lab6.vhd(95): inferring latch(es) for signal or variable "quotient_set", which holds its previous value in one or more paths through the process File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Warning (10631): VHDL Process Statement warning at lab6.vhd(95): inferring latch(es) for signal or variable "quotient_load", which holds its previous value in one or more paths through the process File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Warning (10631): VHDL Process Statement warning at lab6.vhd(95): inferring latch(es) for signal or variable "divisor_load", which holds its previous value in one or more paths through the process File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "divisor_load" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "quotient_load" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "quotient_set" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[0]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[1]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[2]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[3]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[4]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[5]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[6]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[7]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[8]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[9]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[10]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[11]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[12]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[13]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[14]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[15]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[16]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[17]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[18]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[19]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[20]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[21]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[22]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[23]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[24]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[25]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[26]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[27]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[28]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[29]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[30]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "w[31]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[0]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[1]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[2]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[3]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[4]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[5]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[6]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[7]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[8]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[9]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[10]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[11]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[12]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[13]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[14]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[15]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[16]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[17]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[18]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[19]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[20]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[21]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[22]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[23]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[24]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[25]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[26]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[27]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[28]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[29]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[30]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "step[31]" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (10041): Inferred latch for "subtractor_load" at lab6.vhd(95) File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Info (12128): Elaborating entity "subtractor" for hierarchy "subtractor:dd_subtractor" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 43
+Info (12128): Elaborating entity "U_Shift" for hierarchy "U_Shift:divisor_sr" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 47
+Info (12128): Elaborating entity "U_Shift" for hierarchy "U_Shift:qutoient_sr" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 55
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "step[9]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[10]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[11]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[12]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[13]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[14]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[15]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[16]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[17]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[18]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[19]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[20]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[21]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[22]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[23]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[24]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[25]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[26]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[27]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[28]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[29]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[30]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Info (13026): Duplicate LATCH primitive "step[31]$latch" merged with LATCH primitive "step[8]$latch" File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+Warning (13012): Latch step[0]$latch has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal y.S1 File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 27
+Warning (13012): Latch step[1]$latch has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dividend[1] File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 12
+Warning (13012): Latch step[2]$latch has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal y.S1 File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 27
+Warning (13012): Latch step[3]$latch has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dividend[3] File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 12
+Warning (13012): Latch step[4]$latch has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal divisor[0] File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 11
+Warning (13012): Latch step[5]$latch has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal divisor[0] File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 11
+Warning (13012): Latch step[6]$latch has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal divisor[2] File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 11
+Warning (13012): Latch step[7]$latch has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal divisor[3] File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 11
+Warning (13012): Latch step[8]$latch has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal divisor[3] File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 11
+Warning (13012): Latch quotient_set has unsafe behavior File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 34
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal y.S2B File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 27
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "w[2]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[3]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[4]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[5]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[6]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[7]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[8]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[9]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[10]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[11]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[12]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[13]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[14]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[15]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[16]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[17]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[18]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[19]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[20]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[21]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[22]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[23]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[24]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[25]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[26]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[27]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[28]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[29]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[30]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "w[31]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 95
+    Warning (13410): Pin "fixed_dividend[4]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 20
+    Warning (13410): Pin "fixed_dividend[5]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 20
+    Warning (13410): Pin "fixed_dividend[6]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 20
+    Warning (13410): Pin "fixed_dividend[7]" is stuck at GND File: C:/Users/Xuan/Desktop/110F-MicrocomputerProject/lab6/lab6.vhd Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 195 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 93 output pins
+    Info (21061): Implemented 92 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
+    Info: Peak virtual memory: 4822 megabytes
+    Info: Processing ended: Tue Dec 21 03:00:57 2021
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:32
+
+
