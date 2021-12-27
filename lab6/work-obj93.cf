@@ -1,0 +1,14 @@
+v 3
+file . "subtractor.vhd" "20211220153318.000" "20211221171733.471":
+  entity subtractor at 1( 0) + 0 on 97;
+  architecture func of subtractor at 11( 390) + 0 on 98;
+file . "main.vhd" "20211220111848.000" "20211221171733.422":
+  entity u_shift at 1( 0) + 0 on 94;
+  architecture func of u_shift at 17( 374) + 0 on 95;
+file . "shift_register_package.vhd" "20211219181624.000" "20211221171733.390":
+  package shiftregister_package at 1( 0) + 0 on 93;
+file . "subtractor_package.vhd" "20211220111542.000" "20211221171733.450":
+  package subtractor_package at 1( 0) + 0 on 96;
+file . "lab6.vhd" "20211220190012.000" "20211221171733.496":
+  entity eight_bits_div at 1( 0) + 0 on 99;
+  architecture func of eight_bits_div at 25( 702) + 0 on 100;
