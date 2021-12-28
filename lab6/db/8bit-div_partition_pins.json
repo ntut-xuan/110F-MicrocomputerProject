@@ -1,0 +1,285 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "remainder[0]",
+					"strict" : false
+				},
+				{
+					"name" : "remainder[1]",
+					"strict" : false
+				},
+				{
+					"name" : "remainder[2]",
+					"strict" : false
+				},
+				{
+					"name" : "remainder[3]",
+					"strict" : false
+				},
+				{
+					"name" : "remainder[4]",
+					"strict" : false
+				},
+				{
+					"name" : "remainder[5]",
+					"strict" : false
+				},
+				{
+					"name" : "remainder[6]",
+					"strict" : false
+				},
+				{
+					"name" : "remainder[7]",
+					"strict" : false
+				},
+				{
+					"name" : "quotient[0]",
+					"strict" : false
+				},
+				{
+					"name" : "quotient[1]",
+					"strict" : false
+				},
+				{
+					"name" : "quotient[2]",
+					"strict" : false
+				},
+				{
+					"name" : "quotient[3]",
+					"strict" : false
+				},
+				{
+					"name" : "minus_temp[0]",
+					"strict" : false
+				},
+				{
+					"name" : "minus_temp[1]",
+					"strict" : false
+				},
+				{
+					"name" : "minus_temp[2]",
+					"strict" : false
+				},
+				{
+					"name" : "minus_temp[3]",
+					"strict" : false
+				},
+				{
+					"name" : "minus_temp[4]",
+					"strict" : false
+				},
+				{
+					"name" : "minus_temp[5]",
+					"strict" : false
+				},
+				{
+					"name" : "minus_temp[6]",
+					"strict" : false
+				},
+				{
+					"name" : "minus_temp[7]",
+					"strict" : false
+				},
+				{
+					"name" : "w[0]",
+					"strict" : false
+				},
+				{
+					"name" : "w[1]",
+					"strict" : false
+				},
+				{
+					"name" : "step[0]",
+					"strict" : false
+				},
+				{
+					"name" : "step[1]",
+					"strict" : false
+				},
+				{
+					"name" : "step[2]",
+					"strict" : false
+				},
+				{
+					"name" : "step[3]",
+					"strict" : false
+				},
+				{
+					"name" : "step[4]",
+					"strict" : false
+				},
+				{
+					"name" : "step[5]",
+					"strict" : false
+				},
+				{
+					"name" : "step[6]",
+					"strict" : false
+				},
+				{
+					"name" : "step[7]",
+					"strict" : false
+				},
+				{
+					"name" : "step[8]",
+					"strict" : false
+				},
+				{
+					"name" : "step[9]",
+					"strict" : false
+				},
+				{
+					"name" : "step[10]",
+					"strict" : false
+				},
+				{
+					"name" : "step[11]",
+					"strict" : false
+				},
+				{
+					"name" : "step[12]",
+					"strict" : false
+				},
+				{
+					"name" : "step[13]",
+					"strict" : false
+				},
+				{
+					"name" : "step[14]",
+					"strict" : false
+				},
+				{
+					"name" : "step[15]",
+					"strict" : false
+				},
+				{
+					"name" : "step[16]",
+					"strict" : false
+				},
+				{
+					"name" : "step[17]",
+					"strict" : false
+				},
+				{
+					"name" : "step[18]",
+					"strict" : false
+				},
+				{
+					"name" : "step[19]",
+					"strict" : false
+				},
+				{
+					"name" : "step[20]",
+					"strict" : false
+				},
+				{
+					"name" : "step[21]",
+					"strict" : false
+				},
+				{
+					"name" : "step[22]",
+					"strict" : false
+				},
+				{
+					"name" : "step[23]",
+					"strict" : false
+				},
+				{
+					"name" : "step[24]",
+					"strict" : false
+				},
+				{
+					"name" : "step[25]",
+					"strict" : false
+				},
+				{
+					"name" : "step[26]",
+					"strict" : false
+				},
+				{
+					"name" : "step[27]",
+					"strict" : false
+				},
+				{
+					"name" : "step[28]",
+					"strict" : false
+				},
+				{
+					"name" : "step[29]",
+					"strict" : false
+				},
+				{
+					"name" : "step[30]",
+					"strict" : false
+				},
+				{
+					"name" : "step[31]",
+					"strict" : false
+				},
+				{
+					"name" : "subtractor_load",
+					"strict" : false
+				},
+				{
+					"name" : "fixed_dividend[0]",
+					"strict" : false
+				},
+				{
+					"name" : "fixed_dividend[1]",
+					"strict" : false
+				},
+				{
+					"name" : "fixed_dividend[2]",
+					"strict" : false
+				},
+				{
+					"name" : "fixed_dividend[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dividend[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dividend[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dividend[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dividend[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "divisor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "divisor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "divisor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "divisor[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
