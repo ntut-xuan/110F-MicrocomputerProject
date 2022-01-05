@@ -34,7 +34,7 @@ begin
 				ProcessComplete <= '1';
 				case op is
 					when "0000" =>
-						tmpBus <= Data;
+						D_Bus <= Data;
 						case Rs_pointer is
 							when "00" => R0 <= Data;
 							when "01" => R1 <= Data;
@@ -88,9 +88,9 @@ begin
 						tmpBus <= tmpBus2 and tmpBus;
 					when "1001" =>		--Sub
 						tmpBus <= tmpBus2 - tmpBus;
-					when "0101" =>		--Or
+					when "0101" =>		
 						tmpBus <= tmpBus - tmpBus2;
-					when "0111" =>		--slt
+					when "0100" =>		--slt
 						if unsigned(tmpBus2) < unsigned(tmpBus) then
 							tmpBus <= "00000001";
 						else

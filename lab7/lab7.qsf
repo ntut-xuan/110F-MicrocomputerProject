@@ -57,9 +57,6 @@ set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE simpleCPU.vhd
-set_global_assignment -name VHDL_FILE seven_seg.vhd
-set_global_assignment -name VHDL_FILE lab07.vhd
 set_location_assignment PIN_M23 -to Clk
 set_location_assignment PIN_AA22 -to Control[7]
 set_location_assignment PIN_AA23 -to Control[6]
@@ -119,4 +116,9 @@ set_location_assignment PIN_AH19 -to HEX_Rt[10]
 set_location_assignment PIN_AG19 -to HEX_Rt[11]
 set_location_assignment PIN_AF18 -to HEX_Rt[12]
 set_location_assignment PIN_AH18 -to HEX_Rt[13]
+set_location_assignment PIN_G19 -to Done
+set_global_assignment -name VHDL_FILE seven_segment_package.vhd
+set_global_assignment -name VHDL_FILE seven_segment.vhd
+set_global_assignment -name VHDL_FILE simpleCPU.vhd
+set_global_assignment -name VHDL_FILE lab07.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
